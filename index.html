@@ -2,354 +2,304 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Seu Site - Institucional Moderno</title>
-  <meta name="description" content="Um site moderno e responsivo feito com HTML, CSS e JavaScript." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sua Loja — Vendas Online</title>
+  <meta name="description" content="Loja online com carrinho e checkout rápido via WhatsApp/Pix." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-  <!-- Top progress bar -->
-  <div class="progress" id="progress"></div>
-
-  <header class="header" id="top">
-    <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Ir para o topo">
-        <span class="brand__logo">S</span>
-        <span class="brand__name">SeuSite</span>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand__logo">🛍️</span>
+        <span class="brand__name">Sua Loja</span>
       </a>
 
-      <button class="icon-btn header__menu" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
-        <span class="burger" aria-hidden="true"></span>
-      </button>
-
-      <nav class="nav" id="nav" aria-label="Navegação principal">
-        <a href="#servicos">Serviços</a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#produtos">Produtos</a>
         <a href="#sobre">Sobre</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#depoimentos">Depoimentos</a>
         <a href="#faq">FAQ</a>
-        <a href="#contato" class="btn btn--sm">Contato</a>
       </nav>
+
+      <div class="topbar__actions">
+        <button id="btnTheme" class="btn btn--ghost" type="button" aria-label="Alternar tema">
+          🌙 <span class="hide-sm">Tema</span>
+        </button>
+
+        <button id="btnCart" class="btn btn--primary" type="button" aria-label="Abrir carrinho">
+          🛒 <span class="hide-sm">Carrinho</span>
+          <span id="cartCount" class="pill" aria-label="Itens no carrinho">0</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- Hero -->
+  <!-- Hero -->
+  <main id="inicio">
     <section class="hero">
-      <div class="container hero__grid">
+      <div class="container hero__inner">
         <div class="hero__content">
-          <div class="pill">🚀 Site moderno • rápido • responsivo</div>
-          <h1>Crie presença online com um site que converte.</h1>
-          <p>
-            Um template profissional em HTML, CSS e JavaScript, pronto para você personalizar.
-            Leve, bonito e com seções completas.
+          <p class="badge">Entrega rápida • Pagamento via Pix/WhatsApp</p>
+          <h1>Vitrine moderna com checkout rápido</h1>
+          <p class="muted">
+            Uma loja simples, bonita e funcional: produtos, carrinho, cupom e finalização de pedido.
+            Hospede grátis no GitHub Pages ou Netlify.
           </p>
 
-          <div class="hero__actions">
-            <a class="btn" href="#contato">Pedir orçamento</a>
-            <a class="btn btn--ghost" href="#portfolio">Ver trabalhos</a>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#produtos">Ver produtos</a>
+            <button id="btnOpenCheckout" class="btn btn--ghost" type="button">Finalizar pedido</button>
           </div>
 
-          <div class="hero__stats">
-            <div class="stat">
-              <strong>+50</strong>
-              <span>layouts possíveis</span>
+          <div class="hero__highlights">
+            <div class="card mini">
+              <div class="mini__title">✅ Sem mensalidade</div>
+              <div class="mini__text">Hospedagem grátis</div>
             </div>
-            <div class="stat">
-              <strong>100%</strong>
-              <span>responsivo</span>
+            <div class="card mini">
+              <div class="mini__title">⚡ Rápido</div>
+              <div class="mini__text">Site leve e responsivo</div>
             </div>
-            <div class="stat">
-              <strong>SEO</strong>
-              <span>base otimizada</span>
+            <div class="card mini">
+              <div class="mini__title">🔒 Seguro</div>
+              <div class="mini__text">Checkout por link</div>
             </div>
           </div>
         </div>
 
-        <div class="hero__card" aria-label="Demonstração">
-          <div class="card">
-            <div class="card__top">
-              <span class="dot dot--r"></span>
-              <span class="dot dot--y"></span>
-              <span class="dot dot--g"></span>
+        <div class="hero__banner">
+          <div class="banner card">
+            <div class="banner__top">
+              <div class="banner__title">Promoção da semana</div>
+              <div class="badge badge--soft">-20%</div>
             </div>
-            <div class="card__body">
-              <div class="skeleton skeleton--title"></div>
-              <div class="skeleton skeleton--line"></div>
-              <div class="skeleton skeleton--line"></div>
-              <div class="skeleton skeleton--line"></div>
-              <div class="skeleton skeleton--grid">
-                <div class="skeleton skeleton--box"></div>
-                <div class="skeleton skeleton--box"></div>
-                <div class="skeleton skeleton--box"></div>
-                <div class="skeleton skeleton--box"></div>
+            <div class="banner__body">
+              <div class="banner__product">
+                <div class="banner__img" aria-hidden="true">🎧</div>
+                <div>
+                  <div class="banner__name">Fone Bluetooth X</div>
+                  <div class="muted">Som limpo + bateria longa</div>
+                </div>
               </div>
-              <div class="badge">Performance ⚡</div>
+              <div class="banner__price">
+                <span class="priceOld">R$ 249,90</span>
+                <span class="priceNow">R$ 199,90</span>
+              </div>
+              <button class="btn btn--primary w-full" data-quick-add="p1" type="button">
+                Adicionar ao carrinho
+              </button>
+              <p class="tiny muted">*Exemplo. Troque pelos seus produtos no arquivo <b>app.js</b>.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <a class="scroll-hint" href="#servicos" aria-label="Rolar para serviços">
-        <span></span>
-      </a>
     </section>
 
-    <!-- Serviços -->
-    <section class="section" id="servicos">
+    <!-- Produtos -->
+    <section id="produtos" class="section">
       <div class="container">
         <div class="section__head">
-          <h2>Serviços</h2>
-          <p>O que você pode oferecer no seu site (edite os cards como quiser).</p>
+          <div>
+            <h2>Produtos</h2>
+            <p class="muted">Pesquise, filtre e adicione ao carrinho.</p>
+          </div>
+
+          <div class="filters">
+            <div class="field">
+              <label for="search">Buscar</label>
+              <input id="search" type="search" placeholder="Ex: fone, camisa, perfume..." autocomplete="off" />
+            </div>
+
+            <div class="field">
+              <label for="category">Categoria</label>
+              <select id="category">
+                <option value="all">Todas</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="sort">Ordenar</label>
+              <select id="sort">
+                <option value="featured">Destaques</option>
+                <option value="priceAsc">Menor preço</option>
+                <option value="priceDesc">Maior preço</option>
+                <option value="nameAsc">Nome (A-Z)</option>
+              </select>
+            </div>
+          </div>
         </div>
 
-        <div class="grid grid--3">
-          <article class="feature reveal">
-            <div class="feature__icon">🎨</div>
-            <h3>Design moderno</h3>
-            <p>Componentes bem espaçados, tipografia limpa e visual atual.</p>
-          </article>
-
-          <article class="feature reveal">
-            <div class="feature__icon">📱</div>
-            <h3>Responsivo</h3>
-            <p>Fica ótimo no celular, tablet e desktop sem esforço.</p>
-          </article>
-
-          <article class="feature reveal">
-            <div class="feature__icon">⚙️</div>
-            <h3>Interações</h3>
-            <p>Menu mobile, animações suaves, validação de formulário e mais.</p>
-          </article>
-        </div>
+        <div id="productGrid" class="grid" aria-live="polite"></div>
       </div>
     </section>
 
     <!-- Sobre -->
-    <section class="section section--alt" id="sobre">
+    <section id="sobre" class="section section--alt">
       <div class="container split">
-        <div class="split__content reveal">
-          <h2>Sobre</h2>
-          <p>
-            Conte sua história aqui: quem você é, o que faz e por que as pessoas devem confiar em você.
-            Um bom “Sobre” aumenta credibilidade e conversão.
+        <div>
+          <h2>Sobre a loja</h2>
+          <p class="muted">
+            Aqui você coloca sua história, garantia, prazos de entrega e formas de pagamento.
+            O checkout gera uma mensagem pronta no WhatsApp com os itens e total, e você pode exibir
+            seu Pix para pagamento.
           </p>
 
-          <ul class="checklist">
-            <li>✅ Mensagem clara e objetiva</li>
-            <li>✅ Prova social (depoimentos)</li>
-            <li>✅ Chamadas para ação visíveis</li>
-          </ul>
-
-          <div class="actions">
-            <a class="btn btn--ghost" href="#depoimentos">Ver depoimentos</a>
+          <div class="list">
+            <div class="list__item">📦 Envio em até <b>24h</b> após confirmação</div>
+            <div class="list__item">🧾 Nota/recibo sob solicitação</div>
+            <div class="list__item">💬 Suporte rápido no WhatsApp</div>
           </div>
         </div>
 
-        <div class="split__media reveal">
-          <div class="photo">
-            <div class="photo__shine"></div>
-            <div class="photo__content">
-              <h4>Seu Nome / Marca</h4>
-              <p>Profissional • Empresa • Projeto</p>
-              <div class="chips">
-                <span>HTML</span><span>CSS</span><span>JS</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfólio -->
-    <section class="section" id="portfolio">
-      <div class="container">
-        <div class="section__head">
-          <h2>Portfólio</h2>
-          <p>Troque as imagens/itens por seus projetos. Clique para ampliar.</p>
-        </div>
-
-        <div class="grid grid--3">
-          <button class="work reveal" data-modal="Projeto 1" data-desc="Landing page moderna com CTA e formulário.">
-            <span class="work__thumb work__thumb--a"></span>
-            <span class="work__meta">
-              <strong>Projeto 1</strong>
-              <em>Landing page</em>
-            </span>
+        <div class="card info">
+          <h3>Configuração rápida</h3>
+          <ol class="steps">
+            <li>Edite produtos em <b>app.js</b></li>
+            <li>Troque nome/cores em <b>styles.css</b></li>
+            <li>Coloque seu WhatsApp e Pix em <b>app.js</b></li>
+            <li>Publique grátis no GitHub Pages / Netlify</li>
+          </ol>
+          <button id="btnDemoFill" class="btn btn--ghost w-full" type="button">
+            Preencher carrinho (demo)
           </button>
-
-          <button class="work reveal" data-modal="Projeto 2" data-desc="Site institucional responsivo e rápido.">
-            <span class="work__thumb work__thumb--b"></span>
-            <span class="work__meta">
-              <strong>Projeto 2</strong>
-              <em>Institucional</em>
-            </span>
-          </button>
-
-          <button class="work reveal" data-modal="Projeto 3" data-desc="Página de serviços com seção de depoimentos.">
-            <span class="work__thumb work__thumb--c"></span>
-            <span class="work__meta">
-              <strong>Projeto 3</strong>
-              <em>Serviços</em>
-            </span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Depoimentos -->
-    <section class="section section--alt" id="depoimentos">
-      <div class="container">
-        <div class="section__head">
-          <h2>Depoimentos</h2>
-          <p>Prova social é um dos maiores aceleradores de vendas.</p>
-        </div>
-
-        <div class="slider reveal" aria-label="Depoimentos">
-          <div class="slider__track" id="sliderTrack">
-            <article class="testimonial">
-              <p>“Ficou lindo e muito rápido. Aumentou meus contatos em poucos dias.”</p>
-              <footer>
-                <strong>Ana</strong>
-                <span>Negócio local</span>
-              </footer>
-            </article>
-
-            <article class="testimonial">
-              <p>“O site passou mais credibilidade. O formulário funciona perfeito no celular.”</p>
-              <footer>
-                <strong>Bruno</strong>
-                <span>Prestador de serviço</span>
-              </footer>
-            </article>
-
-            <article class="testimonial">
-              <p>“Layout moderno e fácil de editar. Em 1 tarde eu personalizei tudo.”</p>
-              <footer>
-                <strong>Carla</strong>
-                <span>Freelancer</span>
-              </footer>
-            </article>
-          </div>
-
-          <div class="slider__controls">
-            <button class="icon-btn" id="prevBtn" aria-label="Anterior">←</button>
-            <div class="dots" id="dots" aria-label="Indicadores"></div>
-            <button class="icon-btn" id="nextBtn" aria-label="Próximo">→</button>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="section" id="faq">
+    <section id="faq" class="section">
       <div class="container">
-        <div class="section__head">
-          <h2>FAQ</h2>
-          <p>Dúvidas comuns. Clica para expandir.</p>
-        </div>
-
-        <div class="faq reveal" role="list">
-          <details open>
-            <summary>Como eu publico esse site?</summary>
-            <p>Você pode usar GitHub Pages, Netlify ou Vercel. É só enviar os arquivos e apontar o domínio.</p>
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details class="card" open>
+            <summary>Como eu recebo o pagamento?</summary>
+            <p class="muted">Você pode usar Pix (chave) e confirmar pelo WhatsApp. Se quiser, dá para integrar Mercado Pago/Stripe depois.</p>
           </details>
 
-          <details>
-            <summary>Dá para colocar WhatsApp/Instagram?</summary>
-            <p>Sim. É só trocar os links nos botões e rodapé.</p>
+          <details class="card">
+            <summary>Isso funciona em celular?</summary>
+            <p class="muted">Sim. O site é responsivo e o checkout abre o WhatsApp no celular.</p>
           </details>
 
-          <details>
-            <summary>Esse site é rápido?</summary>
-            <p>Sim: sem frameworks, poucas dependências, foco em performance e UX.</p>
+          <details class="card">
+            <summary>Posso colocar frete?</summary>
+            <p class="muted">Sim. Já tem campo de entrega e taxa fixa. Você pode adaptar por região.</p>
           </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contato -->
-    <section class="section section--alt" id="contato">
-      <div class="container split">
-        <div class="split__content reveal">
-          <h2>Contato</h2>
-          <p>
-            Preencha o formulário e eu te retorno. (Aqui está com validação em JavaScript.)
-          </p>
-
-          <div class="contact-cards">
-            <a class="contact-card" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">
-              <strong>WhatsApp</strong>
-              <span>+55 (00) 00000-0000</span>
-            </a>
-            <a class="contact-card" href="mailto:contato@seusite.com">
-              <strong>E-mail</strong>
-              <span>contato@seusite.com</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="split__media reveal">
-          <form class="form" id="contactForm" novalidate>
-            <div class="field">
-              <label for="name">Nome</label>
-              <input id="name" name="name" type="text" placeholder="Seu nome" autocomplete="name" required minlength="2" />
-              <small class="error" data-error-for="name"></small>
-            </div>
-
-            <div class="field">
-              <label for="email">E-mail</label>
-              <input id="email" name="email" type="email" placeholder="voce@exemplo.com" autocomplete="email" required />
-              <small class="error" data-error-for="email"></small>
-            </div>
-
-            <div class="field">
-              <label for="message">Mensagem</label>
-              <textarea id="message" name="message" rows="5" placeholder="Como posso te ajudar?" required minlength="10"></textarea>
-              <small class="error" data-error-for="message"></small>
-            </div>
-
-            <button class="btn" type="submit">
-              Enviar mensagem
-            </button>
-
-            <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
-          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> SeuSite. Todos os direitos reservados.</p>
-      <div class="footer__links">
-        <a href="#top">Topo</a>
-        <a href="#contato">Contato</a>
-        <a href="#faq">FAQ</a>
+  <!-- Drawer Carrinho -->
+  <aside id="cartDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer__overlay" data-close-drawer></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Carrinho">
+      <div class="drawer__head">
+        <div>
+          <h3>Carrinho</h3>
+          <p id="cartSub" class="muted tiny">0 itens</p>
+        </div>
+        <button class="iconBtn" type="button" data-close-drawer aria-label="Fechar carrinho">✕</button>
+      </div>
+
+      <div id="cartItems" class="drawer__body"></div>
+
+      <div class="drawer__footer">
+        <div class="row">
+          <div class="field w-full">
+            <label for="coupon">Cupom</label>
+            <input id="coupon" placeholder="EX: BEMVINDO10" autocomplete="off" />
+          </div>
+          <button id="btnApplyCoupon" class="btn btn--ghost" type="button">Aplicar</button>
+        </div>
+
+        <div class="row">
+          <div class="field w-full">
+            <label for="shipping">Entrega (taxa fixa)</label>
+            <input id="shipping" type="number" inputmode="decimal" min="0" step="0.5" value="0" />
+          </div>
+        </div>
+
+        <div class="totals">
+          <div class="totals__line">
+            <span>Subtotal</span>
+            <span id="subtotal">R$ 0,00</span>
+          </div>
+          <div class="totals__line">
+            <span>Desconto</span>
+            <span id="discount">R$ 0,00</span>
+          </div>
+          <div class="totals__line">
+            <span>Entrega</span>
+            <span id="shippingText">R$ 0,00</span>
+          </div>
+          <div class="totals__line totals__line--strong">
+            <span>Total</span>
+            <span id="total">R$ 0,00</span>
+          </div>
+        </div>
+
+        <button id="btnCheckout" class="btn btn--primary w-full" type="button">
+          Finalizar no WhatsApp
+        </button>
+
+        <button id="btnPix" class="btn btn--ghost w-full" type="button">
+          Ver Pix / Copiar chave
+        </button>
+
+        <button id="btnClearCart" class="btn btn--danger w-full" type="button">
+          Limpar carrinho
+        </button>
+
+        <p class="tiny muted center">Ao finalizar, uma mensagem com seu pedido será gerada.</p>
       </div>
     </div>
-  </footer>
+  </aside>
 
-  <!-- Floating WhatsApp -->
-  <a class="fab" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp">
-    💬
-  </a>
-
-  <!-- Modal -->
-  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detalhes do projeto">
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__panel" role="document">
-      <button class="icon-btn modal__close" data-close aria-label="Fechar">✕</button>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDesc"></p>
-      <div class="modal__actions">
-        <button class="btn btn--ghost" data-close>Fechar</button>
+  <!-- Modal Pix -->
+  <div id="pixModal" class="modal" aria-hidden="true">
+    <div class="modal__overlay" data-close-pix></div>
+    <div class="modal__panel card" role="dialog" aria-modal="true" aria-label="Pagamento via Pix">
+      <div class="modal__head">
+        <h3>Pagamento via Pix</h3>
+        <button class="iconBtn" type="button" data-close-pix aria-label="Fechar Pix">✕</button>
       </div>
+
+      <p class="muted">Use a chave abaixo e envie o comprovante no WhatsApp.</p>
+
+      <div class="pixBox">
+        <div class="pixKeyRow">
+          <div>
+            <div class="tiny muted">Chave Pix</div>
+            <div id="pixKey" class="pixKey">SUA-CHAVE-PIX-AQUI</div>
+          </div>
+          <button id="btnCopyPix" class="btn btn--primary" type="button">Copiar</button>
+        </div>
+        <div class="tiny muted">Nome: <span id="pixName">Seu Nome/Empresa</span></div>
+        <div class="tiny muted">Banco: <span id="pixBank">Seu Banco</span></div>
+      </div>
+
+      <button id="btnSendProof" class="btn btn--ghost w-full" type="button">
+        Enviar comprovante no WhatsApp
+      </button>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="muted tiny">© <span id="year"></span> Sua Loja • Feito com HTML/CSS/JS</div>
+      <a class="muted tiny" href="#inicio">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
 </body>
 </html>
