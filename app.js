@@ -1,95 +1,65 @@
+// ===============================
+// CONFIG EMAILJS (OBRIGATÓRIO)
+// ===============================
+emailjs.init("2KvKx8XrBG_zo3szQ"); // 🔴 COLE SUA PUBLIC KEY
+
+const SERVICE_ID = "service_hnkb39c";
+const TEMPLATE_ID = "template_7pm6ft6";
+
+// ===============================
 const WHATSAPP_NUMBER = "5521978827157";
-
-const $ = (id) => document.getElementById(id);
-
-function makeWhatsLink(message) {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-}
-
-function openWhatsApp(message) {
-  window.open(makeWhatsLink(message), "_blank", "noopener,noreferrer");
-}
-
-async function copyToClipboard(text) {
-  try {
-    await navigator.clipboard.writeText(text);
-    alert("Mensagem copiada ✅");
-  } catch {
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand("copy");
-    ta.remove();
-    alert("Mensagem copiada ✅");
-  }
-}
+const form = document.getElementById("introForm");
 
 function getSelectedPrice() {
   const el = document.querySelector('input[name="price"]:checked');
   return el ? el.value : "";
 }
 
-function buildMessage(data) {
-  return [
-    "🧊 *PEDIDO DE INTRO 3D — After Store*",
-    "",
-    `👤 Nome: ${data.name}`,
-    `🎨 Cor: ${data.color}`,
-    `🧩 Template: ${data.template}`,
-    `💵 Valor: R$ ${data.price}`,
-    `🔗 Link da logo: ${data.logoLink}`,
-    data.comment ? `💬 Observações: ${data.comment}` : "",
-    "",
-    "✅ Agora vá ao WhatsApp para fazer sua intro.",
-    "Aqui nós fazemos e depois do pagamento nós entregamos.",
-  ].filter(Boolean).join("\n");
-}
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-document.addEventListener("DOMContentLoaded", () => {
-  $("year").textContent = String(new Date().getFullYear());
+  const data = {
+    name: name.value,
+    color: color.value,
+    template: template.value,
+    price: getSelectedPrice(),
+    logo: logoLink.value,
+    comment: comment.value || "Nenhum"
+  };
 
-  const form = $("introForm");
-  const afterSubmit = $("afterSubmit");
-  const whatsLink = $("whatsLink");
-  const previewMsg = $("previewMsg");
-  const copyBtn = $("copyMsg");
+  if (!data.price) {
+    alert("Selecione o valor.");
+    return;
+  }
 
-  let lastMessage = "";
+  // ===============================
+  // ENVIO EMAIL
+  // ===============================
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, data)
+    .then(() => {
+      alert("Pedido enviado com sucesso! ✅");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+      // ===============================
+      // ABRE WHATSAPP
+      // ===============================
+      const msg =
+`PEDIDO INTRO 3D - AFTER STORE
 
-    const data = {
-      name: $("name").value.trim(),
-      color: $("color").value,
-      template: $("template").value,
-      price: getSelectedPrice(),
-      logoLink: $("logoLink").value.trim(),
-      comment: $("comment").value.trim(),
-    };
+Nome: ${data.name}
+Cor: ${data.color}
+Template: ${data.template}
+Valor: R$ ${data.price}
+Logo: ${data.logo}
 
-    if (data.name.length < 2) return alert("Digite seu nome.");
-    if (!data.color) return alert("Selecione a cor.");
-    if (!data.template) return alert("Selecione o template.");
-    if (!data.price) return alert("Selecione o valor (3, 5 ou 8).");
-    if (!data.logoLink) return alert("Cole o link da logo.");
+Após o pagamento entregamos a intro.`;
 
-    lastMessage = buildMessage(data);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
 
-    previewMsg.textContent = lastMessage;
-    whatsLink.href = makeWhatsLink(lastMessage);
-    afterSubmit.classList.add("show");
-
-    // Abre WhatsApp com a mensagem pronta
-    openWhatsApp(lastMessage);
-
-    // limpa form
-    form.reset();
-  });
-
-  copyBtn.addEventListener("click", () => {
-    if (!lastMessage) return alert("Nada para copiar.");
-    copyToClipboard(lastMessage);
-  });
+      form.reset();
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Erro ao enviar e-mail ❌");
+    });
 });
