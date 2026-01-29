@@ -2,187 +2,257 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Sua Loja — Pedido Rápido</title>
+  <title>After Store — Intros 3D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Faça seu pedido informando o produto que deseja comprar." />
+  <meta name="description" content="After Store: Intros 3D. Escolha template, cor e valor. Envie logo e finalize no WhatsApp." />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <header class="top">
+    <div class="wrap top__row">
+      <a class="brand" href="#inicio" aria-label="After Store">
+        <span class="brand__mark">A</span>
+        <span class="brand__text">
+          <b>After Store</b>
+          <small>Intros 3D • After Effects</small>
+        </span>
+      </a>
 
-<header>
-  <div class="wrap headerRow">
-    <div>
-      <h1>🛍️ Sua Loja</h1>
-      <p class="sub">
-        Preencha o formulário e <b>fale com a gente no WhatsApp</b> para confirmar seu pedido.
-      </p>
-      <p class="sub2">
-        WhatsApp: <a class="linkWhite" href="https://wa.me/5521978827157" target="_blank" rel="noopener">21 97882-7157</a>
-      </p>
+      <nav class="nav">
+        <a href="#pedido">Pedir Intro</a>
+        <a href="#como">Como funciona</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="btn btn--primary btn--sm"
+         href="https://wa.me/5521978827157"
+         target="_blank" rel="noopener">
+        WhatsApp
+      </a>
     </div>
-    <nav class="nav">
-      <a href="#pedido">Fazer pedido</a>
-      <a href="#faq">Dúvidas</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-  <section id="pedido" class="wrap">
-    <h2>Faça seu pedido</h2>
-    <p class="muted">Preencha o formulário abaixo. Campos com * são obrigatórios.</p>
+  <main id="inicio">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__left">
+          <div class="pill">
+            <span class="dot"></span>
+            <span>Tema roxo + preto • Intros 3D • After Store</span>
+          </div>
 
-    <div class="notice card">
-      <b>✅ Como funciona:</b>
-      <ol>
-        <li>Você preenche o formulário</li>
-        <li>O WhatsApp abre com a mensagem pronta</li>
-        <li>Você aperta <b>ENVIAR</b> e pronto 😉</li>
-      </ol>
-    </div>
+          <h1>
+            Faça sua <span class="grad">Intro 3D</span> com a <span class="grad2">After Store</span>
+          </h1>
 
-    <form id="orderForm" class="card">
-      <div class="grid">
-        <label>
-          Seu nome *
-          <input type="text" id="name" required minlength="2" placeholder="Ex: Maria Silva">
-        </label>
+          <p class="muted">
+            Escolha o template, a cor, o valor (3/5/8) e mande o link da sua logo.
+            Depois você vai pro WhatsApp para finalizar. ✅
+          </p>
 
-        <label>
-          Seu WhatsApp *
-          <input type="tel" id="phone" required placeholder="Ex: (21) 98888-7777" inputmode="tel">
-        </label>
-
-        <label>
-          Produto que deseja comprar *
-          <input type="text" id="product" required placeholder="Ex: tênis Nike, fone JBL, perfume...">
-        </label>
-
-        <label>
-          Quantidade *
-          <input type="number" id="qty" min="1" max="99" value="1" required>
-        </label>
-
-        <label>
-          Cor / Tamanho / Modelo
-          <input type="text" id="variant" placeholder="Ex: preto, 42, 128GB...">
-        </label>
-
-        <label>
-          Orçamento máximo (R$)
-          <input type="number" id="budget" min="0" step="0.5" placeholder="Ex: 200" inputmode="decimal">
-        </label>
-
-        <label>
-          Forma de pagamento
-          <select id="payment">
-            <option value="">Selecione</option>
-            <option>Pix</option>
-            <option>Dinheiro</option>
-            <option>Cartão</option>
-            <option>Pix + Cartão</option>
-          </select>
-        </label>
-
-        <label>
-          Quando pretende comprar?
-          <select id="when">
-            <option value="">Selecione</option>
-            <option>Hoje</option>
-            <option>Esta semana</option>
-            <option>Este mês</option>
-            <option>Somente pesquisando</option>
-          </select>
-        </label>
-
-        <label class="full">
-          Por que você veio para nossa loja? *
-          <select id="reason" required>
-            <option value="">Selecione</option>
-            <option>Pesquisar preços</option>
-            <option>Comprar um produto específico</option>
-            <option>Aproveitar promoção</option>
-            <option>Indicação</option>
-            <option>Outro</option>
-          </select>
-        </label>
-
-        <label class="full" id="otherWrap">
-          Se "Outro", explique *
-          <input type="text" id="other" placeholder="Explique aqui...">
-        </label>
-
-        <label class="full">
-          Endereço / Bairro
-          <input type="text" id="address" placeholder="Ex: Campo Grande - RJ">
-        </label>
-
-        <label class="full">
-          Comentário
-          <textarea id="comment" rows="3" placeholder="Detalhes do pedido, marca, urgência..."></textarea>
-        </label>
-
-        <label class="check full">
-          <input type="checkbox" id="consent">
-          <span>Aceito receber promoções (opcional)</span>
-        </label>
-      </div>
-
-      <div class="actions">
-        <button class="btn primary" type="submit">Abrir WhatsApp e enviar pedido</button>
-        <button class="btn ghost" type="button" id="exportCSV">Baixar pedidos (CSV)</button>
-        <button class="btn danger" type="button" id="clearData">Apagar pedidos</button>
-      </div>
-
-      <p class="hint muted">
-        Se o WhatsApp não abrir automaticamente, use o botão que aparece depois de enviar.
-      </p>
-
-      <!-- Painel pós-envio -->
-      <div id="afterSubmit" class="afterSubmit card" aria-live="polite">
-        <div class="afterSubmit__title">Quase lá! ✅</div>
-        <p class="muted" style="margin:8px 0 12px;">
-          Clique no botão abaixo para falar no WhatsApp e enviar sua mensagem pronta.
-        </p>
-
-        <div class="afterSubmit__row">
-          <a id="whatsLink" class="btn primary" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          <button id="copyMsg" class="btn ghost" type="button">Copiar mensagem</button>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#pedido">Pedir agora</a>
+            <a class="btn btn--ghost" href="#como">Como funciona</a>
+          </div>
         </div>
 
-        <div class="afterSubmit__msgWrap">
-          <div class="muted" style="font-weight:800;margin-bottom:8px;">Mensagem:</div>
-          <pre id="previewMsg" class="previewMsg"></pre>
+        <div class="hero__right">
+          <div class="card glass">
+            <div class="glass__top">
+              <div>
+                <div class="glass__title">Rápido e simples</div>
+                <div class="muted small">Você preenche → WhatsApp abre</div>
+              </div>
+              <div class="badge">INTRO 3D</div>
+            </div>
+
+            <div class="glass__body">
+              <div class="priceBox">
+                <div class="priceBox__label">Valores disponíveis</div>
+                <div class="priceBox__value">R$ 3 • R$ 5 • R$ 8</div>
+              </div>
+
+              <p class="tiny muted" style="margin-top:10px">
+                *O pagamento é combinado no WhatsApp. Após o pagamento, entregamos sua intro.
+              </p>
+
+              <a class="btn btn--primary w-full" href="#pedido">Pedir Intro 3D</a>
+            </div>
+          </div>
         </div>
       </div>
-    </form>
-  </section>
+    </section>
 
-  <section id="faq" class="wrap">
-    <h2>Dúvidas</h2>
-    <div class="card faq">
-      <details open>
-        <summary>Por que eu preciso apertar “Enviar” no WhatsApp?</summary>
-        <p class="muted">
-          Por segurança, o WhatsApp não permite sites enviarem mensagens automaticamente.
-          O site abre o WhatsApp com a mensagem pronta e você confirma o envio.
-        </p>
-      </details>
-      <details>
-        <summary>Os pedidos ficam salvos?</summary>
-        <p class="muted">Sim, ficam salvos no navegador e você pode baixar em CSV.</p>
-      </details>
+    <section id="pedido" class="section section--alt">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2>Pedido de Intro 3D</h2>
+            <p class="muted">
+              Preencha e vá ao WhatsApp para finalizar com a gente.
+            </p>
+          </div>
+          <div class="hintBox">
+            <div class="hintBox__k">WhatsApp</div>
+            <div class="hintBox__v">21 97882-7157</div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <form id="introForm" class="card form">
+            <div class="form__grid">
+              <div class="field">
+                <label for="name">Seu nome *</label>
+                <input id="name" required minlength="2" placeholder="Ex: João" />
+              </div>
+
+              <div class="field">
+                <label for="color">Cor *</label>
+                <select id="color" required>
+                  <option value="">Selecione</option>
+                  <option>Roxo</option>
+                  <option>Preto</option>
+                  <option>Roxo + Preto</option>
+                  <option>Azul</option>
+                  <option>Vermelho</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="template">Template *</label>
+                <select id="template" required>
+                  <option value="">Selecione</option>
+                  <option>Template 1 (Neon)</option>
+                  <option>Template 2 (Cinemático)</option>
+                  <option>Template 3 (Futurista)</option>
+                  <option>Template 4 (Minimal)</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="price">Valor *</label>
+                <div class="radioRow" role="radiogroup" aria-label="Selecione o valor">
+                  <label class="radioCard">
+                    <input type="radio" name="price" value="3" required />
+                    <span>R$ 3</span>
+                  </label>
+                  <label class="radioCard">
+                    <input type="radio" name="price" value="5" />
+                    <span>R$ 5</span>
+                  </label>
+                  <label class="radioCard">
+                    <input type="radio" name="price" value="8" />
+                    <span>R$ 8</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="field full">
+                <label for="logoLink">Link da logo *</label>
+                <input id="logoLink" required placeholder="Cole o link da logo (Drive/Dropbox/Imgur etc.)" />
+                <div class="tiny muted">
+                  Dica: se não tiver link, suba no Google Drive e cole aqui.
+                </div>
+              </div>
+
+              <div class="field full">
+                <label for="comment">Observações (opcional)</label>
+                <textarea id="comment" rows="3" placeholder="Ex: quero estilo gamer, com brilho, nome no final..."></textarea>
+              </div>
+            </div>
+
+            <div class="form__footer">
+              <div class="notice2 card">
+                <b>📌 Próximo passo:</b>
+                <p class="muted small" style="margin-top:8px">
+                  Agora vá ao WhatsApp para fazer sua intro. Aqui nós fazemos e depois do pagamento nós entregamos.
+                </p>
+              </div>
+
+              <div class="actions">
+                <button class="btn btn--primary" type="submit">Ir para o WhatsApp</button>
+                <button class="btn btn--ghost" type="button" id="copyMsg">Copiar mensagem</button>
+              </div>
+
+              <div id="afterSubmit" class="afterSubmit card" aria-live="polite">
+                <div class="afterSubmit__title">Quase lá ✅</div>
+                <p class="muted small">Clique abaixo para abrir o WhatsApp com a mensagem pronta.</p>
+                <div class="afterSubmit__row">
+                  <a id="whatsLink" class="btn btn--primary" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+                </div>
+
+                <div class="afterSubmit__msgWrap">
+                  <div class="muted small" style="font-weight:900;margin-bottom:8px;">Mensagem:</div>
+                  <pre id="previewMsg" class="previewMsg"></pre>
+                </div>
+              </div>
+
+              <p class="tiny muted">
+                Observação: por segurança, o WhatsApp não envia sozinho. Ele abre com a mensagem pronta e você confirma o envio.
+              </p>
+            </div>
+          </form>
+
+          <aside class="card side">
+            <h3 id="como">Como funciona</h3>
+            <ol class="steps">
+              <li>Você escolhe o template, cor e valor</li>
+              <li>Você manda o link da sua logo</li>
+              <li>Você finaliza no WhatsApp</li>
+              <li>Após o pagamento, entregamos sua intro</li>
+            </ol>
+
+            <div class="divider"></div>
+
+            <h3>Regras rápidas</h3>
+            <div class="list">
+              <div class="list__item">✅ Entrega após pagamento</div>
+              <div class="list__item">✅ Você envia a logo por link</div>
+              <div class="list__item">✅ Ajustes simples inclusos</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <a class="btn btn--primary w-full"
+               href="https://wa.me/5521978827157"
+               target="_blank" rel="noopener">
+              Chamar no WhatsApp
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="wrap">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details class="card" open>
+            <summary>Como eu mando minha logo?</summary>
+            <p class="muted">Você cola o link (Google Drive/Dropbox/Imgur). Depois pode reenviar também no WhatsApp.</p>
+          </details>
+          <details class="card">
+            <summary>Depois do pagamento vocês entregam onde?</summary>
+            <p class="muted">Enviamos por link (Drive) ou pelo WhatsApp, como você preferir.</p>
+          </details>
+          <details class="card">
+            <summary>O que vem na intro?</summary>
+            <p class="muted">Uma intro 3D usando o template escolhido, com sua cor e sua logo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__row">
+      <div class="muted small">© <span id="year"></span> After Store</div>
+      <a class="muted small" href="#inicio">Topo ↑</a>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer>
-  <div class="wrap footerRow">
-    <p>© <span id="year"></span> Sua Loja</p>
-    <a href="#pedido">Voltar ao topo ↑</a>
-  </div>
-</footer>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
