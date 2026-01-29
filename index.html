@@ -5,7 +5,7 @@
   <title>After Store — Intros 3D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#7c3aed" />
-  <meta name="description" content="After Store: Intros 3D. Escolha valor, escreva template e cor, envie a logo e finalize." />
+  <meta name="description" content="After Store: Intros 3D. Escreva template e cor, escolha valor e envie a logo." />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -17,20 +17,20 @@
   <header class="top">
     <div class="wrap top__row">
       <a class="brand" href="#inicio" aria-label="After Store">
-        <span class="brand__mark">A</span>
+        <span class="brand__mark" id="brandMark">A</span>
         <span class="brand__text">
-          <b>After Store</b>
-          <small>Intros 3D • After Effects</small>
+          <b id="brandName">After Store</b>
+          <small id="brandTag">Intros 3D • After Effects</small>
         </span>
       </a>
 
       <nav class="nav">
-        <a href="#pedido">Pedir</a>
-        <a href="#como">Como funciona</a>
-        <a href="#faq">FAQ</a>
+        <a href="#pedido" id="navOrder">Pedir</a>
+        <a href="#como" id="navHow">Como funciona</a>
+        <a href="#faq" id="navFaq">FAQ</a>
       </nav>
 
-      <a class="btn btn--primary btn--sm" href="https://wa.me/5521978827157" target="_blank" rel="noopener">
+      <a class="btn btn--primary btn--sm" id="whatsTopBtn" href="https://wa.me/5521978827157" target="_blank" rel="noopener">
         WhatsApp
       </a>
     </div>
@@ -40,55 +40,58 @@
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__left">
-          <div class="pill">
+          <div class="pill" id="pillTextWrap">
             <span class="dot"></span>
-            <span>Roxo + preto • Intros 3D • Entrega após pagamento</span>
+            <span id="pillText">Roxo + preto • Intros 3D • Entrega após pagamento</span>
           </div>
 
-          <h1>
+          <h1 id="heroTitle">
             Sua <span class="grad">Intro 3D</span> pronta com a <span class="grad2">After Store</span>.
           </h1>
 
-          <p class="muted">
+          <p class="muted" id="heroDesc">
             Preencha em 30 segundos: escreva o <b>template</b> e a <b>cor</b>, escolha o <b>valor</b> e cole o link da sua <b>logo</b>.
             Nós fazemos e <b>depois do pagamento</b> entregamos.
           </p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#pedido">Pedir agora</a>
-            <a class="btn btn--ghost" href="#como">Como funciona</a>
+            <a class="btn btn--primary" href="#pedido" id="ctaOrder">Pedir agora</a>
+            <a class="btn btn--ghost" href="#como" id="ctaHow">Como funciona</a>
           </div>
 
           <div class="hero__badges">
-            <span class="chip">✅ Pedido por e-mail</span>
-            <span class="chip">💬 WhatsApp com mensagem pronta</span>
-            <span class="chip">🔒 Sem complicação</span>
+            <span class="chip" id="chip1">✅ Pedido por e-mail</span>
+            <span class="chip" id="chip2">💬 WhatsApp com mensagem pronta</span>
+            <span class="chip" id="chip3">🔒 Sem complicação</span>
           </div>
+
+          <!-- link admin (discreto) -->
+          <a class="adminLink" href="admin.html" id="adminLink">Admin</a>
         </div>
 
         <div class="hero__right">
           <div class="card glass">
             <div class="glass__top">
               <div>
-                <div class="glass__title">Valores</div>
-                <div class="muted small">Escolha um valor fixo</div>
+                <div class="glass__title" id="heroBoxTitle">Valores</div>
+                <div class="muted small" id="heroBoxSub">Escolha um valor fixo</div>
               </div>
-              <div class="badge">INTRO 3D</div>
+              <div class="badge" id="heroBadge">INTRO 3D</div>
             </div>
 
             <div class="glass__body">
               <div class="priceBox">
-                <div class="priceBox__label">Planos</div>
-                <div class="priceBox__value">R$ 3 • R$ 5 • R$ 8</div>
+                <div class="priceBox__label" id="plansLabel">Planos</div>
+                <div class="priceBox__value" id="plansValue">R$ 3 • R$ 5 • R$ 8</div>
               </div>
 
-              <ul class="miniList">
+              <ul class="miniList" id="miniList">
                 <li>📩 Chega no seu e-mail</li>
                 <li>🧾 Mensagem pronta no WhatsApp</li>
                 <li>⚡ Fluxo rápido pro cliente</li>
               </ul>
 
-              <a class="btn btn--primary w-full" href="#pedido">Fazer pedido</a>
+              <a class="btn btn--primary w-full" href="#pedido" id="heroOrderBtn">Fazer pedido</a>
             </div>
           </div>
         </div>
@@ -99,59 +102,58 @@
       <div class="wrap">
         <div class="section__head">
           <div>
-            <h2>Pedido de Intro 3D</h2>
-            <p class="muted">O pedido será enviado por e-mail e você poderá finalizar no WhatsApp.</p>
+            <h2 id="orderTitle">Pedido de Intro 3D</h2>
+            <p class="muted" id="orderSub">O pedido será enviado por e-mail e você poderá finalizar no WhatsApp.</p>
           </div>
 
           <div class="hintBox">
-            <div class="hintBox__k">WhatsApp</div>
-            <div class="hintBox__v">21 97882-7157</div>
+            <div class="hintBox__k" id="hintLabel">WhatsApp</div>
+            <div class="hintBox__v" id="hintValue">21 97882-7157</div>
           </div>
         </div>
 
         <div class="grid2">
-          <!-- FORM -->
           <form id="introForm" class="card form" novalidate>
             <div class="form__grid">
               <div class="field">
-                <label for="name">Seu nome *</label>
+                <label for="name" id="lblName">Seu nome *</label>
                 <input id="name" name="name" required minlength="2" placeholder="Ex: Davi" />
                 <div class="help" data-help="name"></div>
               </div>
 
               <div class="field">
-                <label for="color">Cor (escreva) *</label>
+                <label for="color" id="lblColor">Cor (escreva) *</label>
                 <input id="color" name="color" required placeholder="Ex: roxo e preto, azul neon..." />
                 <div class="help" data-help="color"></div>
               </div>
 
               <div class="field full">
-                <label for="template">Template (escreva) *</label>
-                <input id="template" name="template" required placeholder="Ex: template neon 01 / template cinemático / igual do vídeo X..." />
+                <label for="template" id="lblTemplate">Template (escreva) *</label>
+                <input id="template" name="template" required placeholder="Ex: template neon 01 / igual do vídeo X..." />
                 <div class="help" data-help="template"></div>
               </div>
 
               <div class="field full">
                 <div class="labelRow">
-                  <label>Valor *</label>
-                  <span class="muted tiny">Selecione 3, 5 ou 8</span>
+                  <label id="lblPrice">Valor *</label>
+                  <span class="muted tiny" id="lblPriceHint">Selecione 3, 5 ou 8</span>
                 </div>
 
                 <div class="radioRow" role="radiogroup" aria-label="Selecione o valor">
                   <label class="radioCard">
                     <input type="radio" name="price" value="3" required />
-                    <span>R$ 3</span>
-                    <small>Basic</small>
+                    <span id="p3">R$ 3</span>
+                    <small id="p3t">Basic</small>
                   </label>
                   <label class="radioCard">
                     <input type="radio" name="price" value="5" />
-                    <span>R$ 5</span>
-                    <small>Pro</small>
+                    <span id="p5">R$ 5</span>
+                    <small id="p5t">Pro</small>
                   </label>
                   <label class="radioCard">
                     <input type="radio" name="price" value="8" />
-                    <span>R$ 8</span>
-                    <small>Ultra</small>
+                    <span id="p8">R$ 8</span>
+                    <small id="p8t">Ultra</small>
                   </label>
                 </div>
 
@@ -160,8 +162,8 @@
 
               <div class="field full">
                 <div class="labelRow">
-                  <label for="logoLink">Link da logo *</label>
-                  <span class="muted tiny">Drive/Dropbox/Imgur</span>
+                  <label for="logoLink" id="lblLogo">Link da logo *</label>
+                  <span class="muted tiny" id="lblLogoHint">Drive/Dropbox/Imgur</span>
                 </div>
                 <input id="logoLink" name="logo" required placeholder="Cole o link da sua logo (ex: https://...)" />
                 <div class="help" data-help="logo"></div>
@@ -169,33 +171,33 @@
 
               <div class="field full">
                 <div class="labelRow">
-                  <label for="comment">Observações (opcional)</label>
+                  <label for="comment" id="lblComment">Observações (opcional)</label>
                   <span class="muted tiny"><span id="commentCount">0</span>/200</span>
                 </div>
                 <textarea id="comment" name="comment" rows="3" maxlength="200"
                   placeholder="Ex: quero com brilho, nome no final, sem música..."></textarea>
-                <div class="help muted tiny">Diga qualquer detalhe extra. (opcional)</div>
+                <div class="help muted tiny" id="commentHelp">Diga qualquer detalhe extra. (opcional)</div>
               </div>
 
               <div class="field full">
                 <label class="toggle">
                   <input type="checkbox" id="openWhats" checked />
-                  <span>Depois de enviar por e-mail, abrir WhatsApp com mensagem pronta</span>
+                  <span id="openWhatsLbl">Depois de enviar por e-mail, abrir WhatsApp com mensagem pronta</span>
                 </label>
               </div>
             </div>
 
             <div class="form__footer">
               <div class="notice2 card">
-                <b>📌 Próximo passo</b>
-                <p class="muted small" style="margin-top:8px">
-                  Vá ao WhatsApp para fazer sua intro. Aqui nós fazemos e depois do pagamento nós entregamos.
+                <b id="nextStepTitle">📌 Próximo passo</b>
+                <p class="muted small" style="margin-top:8px" id="nextStepText">
+                  Agora vá ao WhatsApp para fazer sua intro. Aqui nós fazemos e depois do pagamento nós entregamos.
                 </p>
               </div>
 
               <div class="actions">
                 <button class="btn btn--primary" type="submit" id="submitBtn">
-                  <span class="btn__text">Enviar pedido</span>
+                  <span class="btn__text" id="submitText">Enviar pedido</span>
                   <span class="btn__spinner" aria-hidden="true"></span>
                 </button>
                 <button class="btn btn--ghost" type="button" id="copyMsg">Copiar mensagem</button>
@@ -206,31 +208,30 @@
 
               <div class="preview card" aria-live="polite">
                 <div class="preview__top">
-                  <b>Preview da mensagem</b>
-                  <span class="muted tiny">Atualiza automaticamente</span>
+                  <b id="previewTitle">Preview da mensagem</b>
+                  <span class="muted tiny" id="previewHint">Atualiza automaticamente</span>
                 </div>
                 <pre class="preview__box" id="previewMsg"></pre>
               </div>
 
               <div id="afterSubmit" class="afterSubmit card" aria-live="polite">
-                <div class="afterSubmit__title">Pedido enviado ✅</div>
-                <p class="muted small">Se o WhatsApp não abriu, clique abaixo:</p>
+                <div class="afterSubmit__title" id="sentTitle">Pedido enviado ✅</div>
+                <p class="muted small" id="sentHint">Se o WhatsApp não abriu, clique abaixo:</p>
 
                 <div class="afterSubmit__row">
                   <a id="whatsLink" class="btn btn--primary" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
                 </div>
               </div>
 
-              <p class="tiny muted">
+              <p class="tiny muted" id="footNote">
                 Obs: por segurança, o WhatsApp não envia sozinho — ele abre com a mensagem pronta e o cliente confirma o envio.
               </p>
             </div>
           </form>
 
-          <!-- SIDE -->
           <aside class="card side">
             <h3 id="como">Como funciona</h3>
-            <ol class="steps">
+            <ol class="steps" id="stepsList">
               <li>Você escreve o template e a cor</li>
               <li>Escolhe o valor (3/5/8)</li>
               <li>Cola o link da logo</li>
@@ -241,10 +242,10 @@
             <div class="divider"></div>
 
             <div class="side__cta">
-              <a class="btn btn--primary w-full" href="https://wa.me/5521978827157" target="_blank" rel="noopener">
+              <a class="btn btn--primary w-full" id="whatsSideBtn" href="https://wa.me/5521978827157" target="_blank" rel="noopener">
                 Chamar no WhatsApp
               </a>
-              <p class="muted tiny" style="margin-top:10px">
+              <p class="muted tiny" style="margin-top:10px" id="sideTip">
                 Dica: se a logo não estiver online, suba no Google Drive e compartilhe o link.
               </p>
             </div>
@@ -252,8 +253,8 @@
             <div class="divider"></div>
 
             <div class="miniFaq">
-              <b>Entregas</b>
-              <p class="muted small">Entregamos por link (Drive) ou WhatsApp após pagamento.</p>
+              <b id="deliveryTitle">Entregas</b>
+              <p class="muted small" id="deliveryText">Entregamos por link (Drive) ou WhatsApp após pagamento.</p>
             </div>
           </aside>
         </div>
@@ -262,19 +263,19 @@
 
     <section id="faq" class="section">
       <div class="wrap">
-        <h2>FAQ</h2>
+        <h2 id="faqTitle">FAQ</h2>
         <div class="faq">
           <details class="card" open>
-            <summary>O pedido chega em qual e-mail?</summary>
-            <p class="muted">No e-mail configurado no EmailJS (o seu Gmail conectado).</p>
+            <summary id="faqQ1">O pedido chega em qual e-mail?</summary>
+            <p class="muted" id="faqA1">No e-mail configurado no EmailJS (o seu Gmail conectado).</p>
           </details>
           <details class="card">
-            <summary>Se o link da logo não abrir?</summary>
-            <p class="muted">Peça para o cliente reenviar no WhatsApp ou colocar no Drive como “qualquer pessoa com link”.</p>
+            <summary id="faqQ2">Se o link da logo não abrir?</summary>
+            <p class="muted" id="faqA2">Peça para o cliente reenviar no WhatsApp ou colocar no Drive como “qualquer pessoa com link”.</p>
           </details>
           <details class="card">
-            <summary>Posso trocar a frase final?</summary>
-            <p class="muted">Sim. É só mudar o texto no app.js (mensagem do WhatsApp) e no template do EmailJS.</p>
+            <summary id="faqQ3">Posso trocar textos e preços?</summary>
+            <p class="muted" id="faqA3">Sim, pelo Painel Admin (admin.html).</p>
           </details>
         </div>
       </div>
@@ -283,8 +284,8 @@
 
   <footer class="foot">
     <div class="wrap foot__row">
-      <div class="muted small">© <span id="year"></span> After Store</div>
-      <a class="muted small" href="#inicio">Topo ↑</a>
+      <div class="muted small">© <span id="year"></span> <span id="footBrand">After Store</span></div>
+      <a class="muted small" href="#inicio" id="topLink">Topo ↑</a>
     </div>
   </footer>
 
@@ -292,4 +293,4 @@
 
   <script src="app.js"></script>
 </body>
-</html>
+  </html>
