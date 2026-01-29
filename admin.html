@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>After Store — Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top__row">
+      <div class="brand">
+        <div class="brand__mark">A</div>
+        <div class="brand__text">
+          <b>After Store</b>
+          <small>Painel Administrativo</small>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="index.html">Voltar ao site</a>
+        <button class="btn danger" id="logoutBtn">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- LOGIN -->
+    <section id="loginBox" class="card">
+      <h1>Login Admin</h1>
+      <p class="muted">Acesso para editar o site.</p>
+
+      <div class="grid">
+        <label>
+          Usuário
+          <input id="user" placeholder="davi" />
+        </label>
+        <label>
+          Senha
+          <input id="pass" type="password" placeholder="123456" />
+        </label>
+      </div>
+
+      <button class="btn primary" id="loginBtn">Entrar</button>
+      <p class="tiny muted">⚠️ Isso é um admin no front-end (não é seguro para site público).</p>
+    </section>
+
+    <!-- PANEL -->
+    <section id="panelBox" class="card hidden">
+      <div class="panelTop">
+        <div>
+          <h2>Configurações do Site</h2>
+          <p class="muted">+110 funções/configurações. Edite, salve e veja no site.</p>
+        </div>
+        <div class="panelBtns">
+          <button class="btn" id="resetBtn">Reset padrão</button>
+          <button class="btn primary" id="saveBtn">Salvar</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="basic">Básico</button>
+        <button class="tab" data-tab="texts">Textos</button>
+        <button class="tab" data-tab="theme">Tema</button>
+        <button class="tab" data-tab="prices">Preços</button>
+        <button class="tab" data-tab="whatsapp">WhatsApp</button>
+        <button class="tab" data-tab="advanced">+100 Funções</button>
+      </div>
+
+      <div id="tab_basic" class="tabPane"></div>
+      <div id="tab_texts" class="tabPane hidden"></div>
+      <div id="tab_theme" class="tabPane hidden"></div>
+      <div id="tab_prices" class="tabPane hidden"></div>
+      <div id="tab_whatsapp" class="tabPane hidden"></div>
+      <div id="tab_advanced" class="tabPane hidden"></div>
+
+      <div class="note">
+        <b>Dica:</b> depois de salvar, abra o site e atualize a página.
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html></div>
+              <div class="skeleton skeleton--line"></div>
+              <div class="skeleton skeleton--line"></div>
+              <div class="skeleton skeleton--grid">
+                <div class="skeleton skeleton--box"></div>
+                <div class="skeleton skeleton--box"></div>
+                <div class="skeleton skeleton--box"></div>
+                <div class="skeleton skeleton--box"></div>
+              </div>
+              <div class="badge">Performance ⚡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#servicos" aria-label="Rolar para serviços">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- Serviços -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section__head">
+          <h2>Serviços</h2>
+          <p>O que você pode oferecer no seu site (edite os cards como quiser).</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="feature reveal">
+            <div class="feature__icon">🎨</div>
+            <h3>Design moderno</h3>
+            <p>Componentes bem espaçados, tipografia limpa e visual atual.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">📱</div>
+            <h3>Responsivo</h3>
+            <p>Fica ótimo no celular, tablet e desktop sem esforço.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature__icon">⚙️</div>
+            <h3>Interações</h3>
+            <p>Menu mobile, animações suaves, validação de formulário e mais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="section section--alt" id="sobre">
+      <div class="container split">
+        <div class="split__content reveal">
+          <h2>Sobre</h2>
+          <p>
+            Conte sua história aqui: quem você é, o que faz e por que as pessoas devem confiar em você.
+            Um bom “Sobre” aumenta credibilidade e conversão.
+          </p>
+
+          <ul class="checklist">
+            <li>✅ Mensagem clara e objetiva</li>
+            <li>✅ Prova social (depoimentos)</li>
+            <li>✅ Chamadas para ação visíveis</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn btn--ghost" href="#depoimentos">Ver depoimentos</a>
+          </div>
+        </div>
+
+        <div class="split__media reveal">
+          <div class="photo">
+            <div class="photo__shine"></div>
+            <div class="photo__content">
+              <h4>Seu Nome / Marca</h4>
+              <p>Profissional • Empresa • Projeto</p>
+              <div class="chips">
+                <span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section__head">
+          <h2>Portfólio</h2>
+          <p>Troque as imagens/itens por seus projetos. Clique para ampliar.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <button class="work reveal" data-modal="Projeto 1" data-desc="Landing page moderna com CTA e formulário.">
+            <span class="work__thumb work__thumb--a"></span>
+            <span class="work__meta">
+              <strong>Projeto 1</strong>
+              <em>Landing page</em>
+            </span>
+          </button>
+
+          <button class="work reveal" data-modal="Projeto 2" data-desc="Site institucional responsivo e rápido.">
+            <span class="work__thumb work__thumb--b"></span>
+            <span class="work__meta">
+              <strong>Projeto 2</strong>
+              <em>Institucional</em>
+            </span>
+          </button>
+
+          <button class="work reveal" data-modal="Projeto 3" data-desc="Página de serviços com seção de depoimentos.">
+            <span class="work__thumb work__thumb--c"></span>
+            <span class="work__meta">
+              <strong>Projeto 3</strong>
+              <em>Serviços</em>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section section--alt" id="depoimentos">
+      <div class="container">
+        <div class="section__head">
+          <h2>Depoimentos</h2>
+          <p>Prova social é um dos maiores aceleradores de vendas.</p>
+        </div>
+
+        <div class="slider reveal" aria-label="Depoimentos">
+          <div class="slider__track" id="sliderTrack">
+            <article class="testimonial">
+              <p>“Ficou lindo e muito rápido. Aumentou meus contatos em poucos dias.”</p>
+              <footer>
+                <strong>Ana</strong>
+                <span>Negócio local</span>
+              </footer>
+            </article>
+
+            <article class="testimonial">
+              <p>“O site passou mais credibilidade. O formulário funciona perfeito no celular.”</p>
+              <footer>
+                <strong>Bruno</strong>
+                <span>Prestador de serviço</span>
+              </footer>
+            </article>
+
+            <article class="testimonial">
+              <p>“Layout moderno e fácil de editar. Em 1 tarde eu personalizei tudo.”</p>
+              <footer>
+                <strong>Carla</strong>
+                <span>Freelancer</span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="slider__controls">
+            <button class="icon-btn" id="prevBtn" aria-label="Anterior">←</button>
+            <div class="dots" id="dots" aria-label="Indicadores"></div>
+            <button class="icon-btn" id="nextBtn" aria-label="Próximo">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <h2>FAQ</h2>
+          <p>Dúvidas comuns. Clica para expandir.</p>
+        </div>
+
+        <div class="faq reveal" role="list">
+          <details open>
+            <summary>Como eu publico esse site?</summary>
+            <p>Você pode usar GitHub Pages, Netlify ou Vercel. É só enviar os arquivos e apontar o domínio.</p>
+          </details>
+
+          <details>
+            <summary>Dá para colocar WhatsApp/Instagram?</summary>
+            <p>Sim. É só trocar os links nos botões e rodapé.</p>
+          </details>
+
+          <details>
+            <summary>Esse site é rápido?</summary>
+            <p>Sim: sem frameworks, poucas dependências, foco em performance e UX.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section section--alt" id="contato">
+      <div class="container split">
+        <div class="split__content reveal">
+          <h2>Contato</h2>
+          <p>
+            Preencha o formulário e eu te retorno. (Aqui está com validação em JavaScript.)
+          </p>
+
+          <div class="contact-cards">
+            <a class="contact-card" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">
+              <strong>WhatsApp</strong>
+              <span>+55 (00) 00000-0000</span>
+            </a>
+            <a class="contact-card" href="mailto:contato@seusite.com">
+              <strong>E-mail</strong>
+              <span>contato@seusite.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="split__media reveal">
+          <form class="form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Nome</label>
+              <input id="name" name="name" type="text" placeholder="Seu nome" autocomplete="name" required minlength="2" />
+              <small class="error" data-error-for="name"></small>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="voce@exemplo.com" autocomplete="email" required />
+              <small class="error" data-error-for="email"></small>
+            </div>
+
+            <div class="field">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" placeholder="Como posso te ajudar?" required minlength="10"></textarea>
+              <small class="error" data-error-for="message"></small>
+            </div>
+
+            <button class="btn" type="submit">
+              Enviar mensagem
+            </button>
+
+            <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> SeuSite. Todos os direitos reservados.</p>
+      <div class="footer__links">
+        <a href="#top">Topo</a>
+        <a href="#contato">Contato</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="fab" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp">
+    💬
+  </a>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detalhes do projeto">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <button class="icon-btn modal__close" data-close aria-label="Fechar">✕</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" data-close>Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
