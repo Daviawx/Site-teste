@@ -1,305 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sua Loja — Vendas Online</title>
-  <meta name="description" content="Loja online com carrinho e checkout rápido via WhatsApp/Pix." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <title>Sua Loja — Pedido Rápido</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Faça seu pedido informando o produto que deseja comprar." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <!-- Top bar -->
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="#inicio" aria-label="Ir para o início">
-        <span class="brand__logo">🛍️</span>
-        <span class="brand__name">Sua Loja</span>
-      </a>
 
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="#produtos">Produtos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-
-      <div class="topbar__actions">
-        <button id="btnTheme" class="btn btn--ghost" type="button" aria-label="Alternar tema">
-          🌙 <span class="hide-sm">Tema</span>
-        </button>
-
-        <button id="btnCart" class="btn btn--primary" type="button" aria-label="Abrir carrinho">
-          🛒 <span class="hide-sm">Carrinho</span>
-          <span id="cartCount" class="pill" aria-label="Itens no carrinho">0</span>
-        </button>
-      </div>
+<header>
+  <div class="wrap headerRow">
+    <div>
+      <h1>🛍️ Sua Loja</h1>
+      <p class="sub">
+        Preencha o formulário e <b>fale com a gente no WhatsApp</b> para confirmar seu pedido.
+      </p>
+      <p class="sub2">
+        WhatsApp: <a class="linkWhite" href="https://wa.me/5521978827157" target="_blank" rel="noopener">21 97882-7157</a>
+      </p>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <main id="inicio">
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="badge">Entrega rápida • Pagamento via Pix/WhatsApp</p>
-          <h1>Vitrine moderna com checkout rápido</h1>
-          <p class="muted">
-            Uma loja simples, bonita e funcional: produtos, carrinho, cupom e finalização de pedido.
-            Hospede grátis no GitHub Pages ou Netlify.
-          </p>
-
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#produtos">Ver produtos</a>
-            <button id="btnOpenCheckout" class="btn btn--ghost" type="button">Finalizar pedido</button>
-          </div>
-
-          <div class="hero__highlights">
-            <div class="card mini">
-              <div class="mini__title">✅ Sem mensalidade</div>
-              <div class="mini__text">Hospedagem grátis</div>
-            </div>
-            <div class="card mini">
-              <div class="mini__title">⚡ Rápido</div>
-              <div class="mini__text">Site leve e responsivo</div>
-            </div>
-            <div class="card mini">
-              <div class="mini__title">🔒 Seguro</div>
-              <div class="mini__text">Checkout por link</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero__banner">
-          <div class="banner card">
-            <div class="banner__top">
-              <div class="banner__title">Promoção da semana</div>
-              <div class="badge badge--soft">-20%</div>
-            </div>
-            <div class="banner__body">
-              <div class="banner__product">
-                <div class="banner__img" aria-hidden="true">🎧</div>
-                <div>
-                  <div class="banner__name">Fone Bluetooth X</div>
-                  <div class="muted">Som limpo + bateria longa</div>
-                </div>
-              </div>
-              <div class="banner__price">
-                <span class="priceOld">R$ 249,90</span>
-                <span class="priceNow">R$ 199,90</span>
-              </div>
-              <button class="btn btn--primary w-full" data-quick-add="p1" type="button">
-                Adicionar ao carrinho
-              </button>
-              <p class="tiny muted">*Exemplo. Troque pelos seus produtos no arquivo <b>app.js</b>.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Produtos -->
-    <section id="produtos" class="section">
-      <div class="container">
-        <div class="section__head">
-          <div>
-            <h2>Produtos</h2>
-            <p class="muted">Pesquise, filtre e adicione ao carrinho.</p>
-          </div>
-
-          <div class="filters">
-            <div class="field">
-              <label for="search">Buscar</label>
-              <input id="search" type="search" placeholder="Ex: fone, camisa, perfume..." autocomplete="off" />
-            </div>
-
-            <div class="field">
-              <label for="category">Categoria</label>
-              <select id="category">
-                <option value="all">Todas</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="sort">Ordenar</label>
-              <select id="sort">
-                <option value="featured">Destaques</option>
-                <option value="priceAsc">Menor preço</option>
-                <option value="priceDesc">Maior preço</option>
-                <option value="nameAsc">Nome (A-Z)</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div id="productGrid" class="grid" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <!-- Sobre -->
-    <section id="sobre" class="section section--alt">
-      <div class="container split">
-        <div>
-          <h2>Sobre a loja</h2>
-          <p class="muted">
-            Aqui você coloca sua história, garantia, prazos de entrega e formas de pagamento.
-            O checkout gera uma mensagem pronta no WhatsApp com os itens e total, e você pode exibir
-            seu Pix para pagamento.
-          </p>
-
-          <div class="list">
-            <div class="list__item">📦 Envio em até <b>24h</b> após confirmação</div>
-            <div class="list__item">🧾 Nota/recibo sob solicitação</div>
-            <div class="list__item">💬 Suporte rápido no WhatsApp</div>
-          </div>
-        </div>
-
-        <div class="card info">
-          <h3>Configuração rápida</h3>
-          <ol class="steps">
-            <li>Edite produtos em <b>app.js</b></li>
-            <li>Troque nome/cores em <b>styles.css</b></li>
-            <li>Coloque seu WhatsApp e Pix em <b>app.js</b></li>
-            <li>Publique grátis no GitHub Pages / Netlify</li>
-          </ol>
-          <button id="btnDemoFill" class="btn btn--ghost w-full" type="button">
-            Preencher carrinho (demo)
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section">
-      <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq">
-          <details class="card" open>
-            <summary>Como eu recebo o pagamento?</summary>
-            <p class="muted">Você pode usar Pix (chave) e confirmar pelo WhatsApp. Se quiser, dá para integrar Mercado Pago/Stripe depois.</p>
-          </details>
-
-          <details class="card">
-            <summary>Isso funciona em celular?</summary>
-            <p class="muted">Sim. O site é responsivo e o checkout abre o WhatsApp no celular.</p>
-          </details>
-
-          <details class="card">
-            <summary>Posso colocar frete?</summary>
-            <p class="muted">Sim. Já tem campo de entrega e taxa fixa. Você pode adaptar por região.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Drawer Carrinho -->
-  <aside id="cartDrawer" class="drawer" aria-hidden="true">
-    <div class="drawer__overlay" data-close-drawer></div>
-    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Carrinho">
-      <div class="drawer__head">
-        <div>
-          <h3>Carrinho</h3>
-          <p id="cartSub" class="muted tiny">0 itens</p>
-        </div>
-        <button class="iconBtn" type="button" data-close-drawer aria-label="Fechar carrinho">✕</button>
-      </div>
-
-      <div id="cartItems" class="drawer__body"></div>
-
-      <div class="drawer__footer">
-        <div class="row">
-          <div class="field w-full">
-            <label for="coupon">Cupom</label>
-            <input id="coupon" placeholder="EX: BEMVINDO10" autocomplete="off" />
-          </div>
-          <button id="btnApplyCoupon" class="btn btn--ghost" type="button">Aplicar</button>
-        </div>
-
-        <div class="row">
-          <div class="field w-full">
-            <label for="shipping">Entrega (taxa fixa)</label>
-            <input id="shipping" type="number" inputmode="decimal" min="0" step="0.5" value="0" />
-          </div>
-        </div>
-
-        <div class="totals">
-          <div class="totals__line">
-            <span>Subtotal</span>
-            <span id="subtotal">R$ 0,00</span>
-          </div>
-          <div class="totals__line">
-            <span>Desconto</span>
-            <span id="discount">R$ 0,00</span>
-          </div>
-          <div class="totals__line">
-            <span>Entrega</span>
-            <span id="shippingText">R$ 0,00</span>
-          </div>
-          <div class="totals__line totals__line--strong">
-            <span>Total</span>
-            <span id="total">R$ 0,00</span>
-          </div>
-        </div>
-
-        <button id="btnCheckout" class="btn btn--primary w-full" type="button">
-          Finalizar no WhatsApp
-        </button>
-
-        <button id="btnPix" class="btn btn--ghost w-full" type="button">
-          Ver Pix / Copiar chave
-        </button>
-
-        <button id="btnClearCart" class="btn btn--danger w-full" type="button">
-          Limpar carrinho
-        </button>
-
-        <p class="tiny muted center">Ao finalizar, uma mensagem com seu pedido será gerada.</p>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Modal Pix -->
-  <div id="pixModal" class="modal" aria-hidden="true">
-    <div class="modal__overlay" data-close-pix></div>
-    <div class="modal__panel card" role="dialog" aria-modal="true" aria-label="Pagamento via Pix">
-      <div class="modal__head">
-        <h3>Pagamento via Pix</h3>
-        <button class="iconBtn" type="button" data-close-pix aria-label="Fechar Pix">✕</button>
-      </div>
-
-      <p class="muted">Use a chave abaixo e envie o comprovante no WhatsApp.</p>
-
-      <div class="pixBox">
-        <div class="pixKeyRow">
-          <div>
-            <div class="tiny muted">Chave Pix</div>
-            <div id="pixKey" class="pixKey">SUA-CHAVE-PIX-AQUI</div>
-          </div>
-          <button id="btnCopyPix" class="btn btn--primary" type="button">Copiar</button>
-        </div>
-        <div class="tiny muted">Nome: <span id="pixName">Seu Nome/Empresa</span></div>
-        <div class="tiny muted">Banco: <span id="pixBank">Seu Banco</span></div>
-      </div>
-
-      <button id="btnSendProof" class="btn btn--ghost w-full" type="button">
-        Enviar comprovante no WhatsApp
-      </button>
-    </div>
+    <nav class="nav">
+      <a href="#pedido">Fazer pedido</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
   </div>
+</header>
 
-  <!-- Toast -->
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<main>
+  <section id="pedido" class="wrap">
+    <h2>Faça seu pedido</h2>
+    <p class="muted">Preencha o formulário abaixo. Campos com * são obrigatórios.</p>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="muted tiny">© <span id="year"></span> Sua Loja • Feito com HTML/CSS/JS</div>
-      <a class="muted tiny" href="#inicio">Voltar ao topo ↑</a>
+    <div class="notice card">
+      <b>✅ Como funciona:</b>
+      <ol>
+        <li>Você preenche o formulário</li>
+        <li>O WhatsApp abre com a mensagem pronta</li>
+        <li>Você aperta <b>ENVIAR</b> e pronto 😉</li>
+      </ol>
     </div>
-  </footer>
 
-  <script src="./app.js"></script>
+    <form id="orderForm" class="card">
+      <div class="grid">
+        <label>
+          Seu nome *
+          <input type="text" id="name" required minlength="2" placeholder="Ex: Maria Silva">
+        </label>
+
+        <label>
+          Seu WhatsApp *
+          <input type="tel" id="phone" required placeholder="Ex: (21) 98888-7777" inputmode="tel">
+        </label>
+
+        <label>
+          Produto que deseja comprar *
+          <input type="text" id="product" required placeholder="Ex: tênis Nike, fone JBL, perfume...">
+        </label>
+
+        <label>
+          Quantidade *
+          <input type="number" id="qty" min="1" max="99" value="1" required>
+        </label>
+
+        <label>
+          Cor / Tamanho / Modelo
+          <input type="text" id="variant" placeholder="Ex: preto, 42, 128GB...">
+        </label>
+
+        <label>
+          Orçamento máximo (R$)
+          <input type="number" id="budget" min="0" step="0.5" placeholder="Ex: 200" inputmode="decimal">
+        </label>
+
+        <label>
+          Forma de pagamento
+          <select id="payment">
+            <option value="">Selecione</option>
+            <option>Pix</option>
+            <option>Dinheiro</option>
+            <option>Cartão</option>
+            <option>Pix + Cartão</option>
+          </select>
+        </label>
+
+        <label>
+          Quando pretende comprar?
+          <select id="when">
+            <option value="">Selecione</option>
+            <option>Hoje</option>
+            <option>Esta semana</option>
+            <option>Este mês</option>
+            <option>Somente pesquisando</option>
+          </select>
+        </label>
+
+        <label class="full">
+          Por que você veio para nossa loja? *
+          <select id="reason" required>
+            <option value="">Selecione</option>
+            <option>Pesquisar preços</option>
+            <option>Comprar um produto específico</option>
+            <option>Aproveitar promoção</option>
+            <option>Indicação</option>
+            <option>Outro</option>
+          </select>
+        </label>
+
+        <label class="full" id="otherWrap">
+          Se "Outro", explique *
+          <input type="text" id="other" placeholder="Explique aqui...">
+        </label>
+
+        <label class="full">
+          Endereço / Bairro
+          <input type="text" id="address" placeholder="Ex: Campo Grande - RJ">
+        </label>
+
+        <label class="full">
+          Comentário
+          <textarea id="comment" rows="3" placeholder="Detalhes do pedido, marca, urgência..."></textarea>
+        </label>
+
+        <label class="check full">
+          <input type="checkbox" id="consent">
+          <span>Aceito receber promoções (opcional)</span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" type="submit">Abrir WhatsApp e enviar pedido</button>
+        <button class="btn ghost" type="button" id="exportCSV">Baixar pedidos (CSV)</button>
+        <button class="btn danger" type="button" id="clearData">Apagar pedidos</button>
+      </div>
+
+      <p class="hint muted">
+        Se o WhatsApp não abrir automaticamente, use o botão que aparece depois de enviar.
+      </p>
+
+      <!-- Painel pós-envio -->
+      <div id="afterSubmit" class="afterSubmit card" aria-live="polite">
+        <div class="afterSubmit__title">Quase lá! ✅</div>
+        <p class="muted" style="margin:8px 0 12px;">
+          Clique no botão abaixo para falar no WhatsApp e enviar sua mensagem pronta.
+        </p>
+
+        <div class="afterSubmit__row">
+          <a id="whatsLink" class="btn primary" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <button id="copyMsg" class="btn ghost" type="button">Copiar mensagem</button>
+        </div>
+
+        <div class="afterSubmit__msgWrap">
+          <div class="muted" style="font-weight:800;margin-bottom:8px;">Mensagem:</div>
+          <pre id="previewMsg" class="previewMsg"></pre>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section id="faq" class="wrap">
+    <h2>Dúvidas</h2>
+    <div class="card faq">
+      <details open>
+        <summary>Por que eu preciso apertar “Enviar” no WhatsApp?</summary>
+        <p class="muted">
+          Por segurança, o WhatsApp não permite sites enviarem mensagens automaticamente.
+          O site abre o WhatsApp com a mensagem pronta e você confirma o envio.
+        </p>
+      </details>
+      <details>
+        <summary>Os pedidos ficam salvos?</summary>
+        <p class="muted">Sim, ficam salvos no navegador e você pode baixar em CSV.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footerRow">
+    <p>© <span id="year"></span> Sua Loja</p>
+    <a href="#pedido">Voltar ao topo ↑</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
